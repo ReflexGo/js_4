@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Метод клик флажка</h1>
+    <form name="Test">
+        Флажок <input type="checkbox" name="ch"> <br> Состояние флажка можно
+        изменить и этой кнопкой
+        <input type="button" value="смена состояния" onclick="document.Test.ch.click();">
+    </form>
+
+    <H1>Метод click групи перемикачів</H1>
+    <FORM NAME="test1">
+        <INPUT TYPE="RADIO" NAME="sex" VALUE="Man" CHECKED>Чоловічий
+        <INPUT TYPE="RADIO" NAME="sex" VALUE="Woman">Жіночий
+        <BR>Стан перемикачів можна змінити цією кнопкою
+        <INPUT TYPE="button" VALUE="Зміна стану" onClick="btnClick();">
+    </FORM>
+
+
+    <H1>Робота з готовим списком</H1>
+    <FORM NAME="test2">
+        <SELECT NAME="item" SIZE=5>
+        <OPTION VALUE="tea" SELECTED>Чай
+        <OPTION VALUE="coffee">Кава
+        <OPTION VALUE="milk">Молоко
+        <OPTION VALUE="cocoa">Какао
+        <OPTION VALUE="juice">Сік
+        </SELECT>
+        <INPUT TYPE="button" VALUE="Нехай кава"
+        onClick="test2.item.options[1].selected=true;">
+        <INPUT TYPE="button" VALUE="Подивимось"
+        onClick="btnClick2();">
+    </FORM>
+
+    <H1>Динамічне заповнення списку</H1>
+    <FORM NAME="sel">
+        <!-- Порожній список посилань-->
+        <SELECT NAME="listOfLinks"> </SELECT>
+        <!-- Кнопка активізації вибраного посилання-->
+        <INPUT
+        TYPE="button"
+        VALUE="Перехід"
+        onClick="window.location.href=document.links[sel.listOfLinks.selectedIndex];"
+        />
+    </FORM>
+    <A HREF="https://rozetka.com.ua/"></A>
+    <A HREF="https://allo.ua/"></A>
+    <A HREF="https://www.olx.ua/"></A>
+    <A HREF="https://www.zieit.edu.ua/"></A>
+   
+    <H1>Заповніть анкету</H1>
+    <FORM NAME="sel1">
+        <!-- Анкета -->
+        <TABLE>
+        <TR><TD><B>Прізвище:<B></TD>
+        <TD><INPUT NAME="family" SIZE=20
+        onBlur="this.value=this.value.toUpperCase()"></TD></TR>
+        <TR><TD><B>Ім'я:<B></TD>
+        <TD><INPUT NAME="name" SIZE=20
+        onBlur="this.value=this.value.toUpperCase()"></TD></TR>
+        <TR><TD><B>Вік:<B></TD>
+        <TD><INPUT NAME="age" SIZE=3 VALUE="18"
+        onBlur="this.value=CheckAge(this.value)"
+        onFocus="this.select()"></TD></TR>
+        <TR><TD><B>Телефон:<B></TD>
+        <TD><INPUT NAME="phone" SIZE=10></TD></TR>
+        </TABLE>
+        <!-- Кнопки готовності та скидання -->
+        <INPUT TYPE="button" VALUE="Ok" onClick="Complete();">
+        <INPUT TYPE="reset" VALUE="Cancel">
+    </FORM>
+    
+
+
+
+    <script src="Index.js"></script>
+</body>
+</html>
